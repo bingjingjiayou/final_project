@@ -14,7 +14,7 @@ Vignette: http://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/d
 
 ## Data
 
-I will use the data from https://dcc.icgc.org/search. Examining clinical data, there are 106 tumor samples, and 41 are defined by me as high incidence age group and 65 are identified as other age groups. The specific files are available are here [donor.tsv].
+I will use the data from https://dcc.icgc.org/search. Examining clinical data, there are 106 tumor samples, and 41 are defined by me as high incidence age group and 65 are identified as other age groups. The specific files are available are here [clinical/donor.tsv].
 
 ## Milestone 1
 
