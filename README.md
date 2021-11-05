@@ -21,6 +21,7 @@ I will use the data from https://dcc.icgc.org/search. Examining clinical data, 
 Due Date: Thursday November 11th
 
 ** Data fully loaded into vignette through HT-SEQ steps
+
 ** I will complete an entire first draft of analysis analyzed through the vignette.
 
 ## Milestone 2
