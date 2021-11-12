@@ -19,12 +19,12 @@ browseVignettes("DESeq2")
 ```
 
 ```{r}
-pasAnno <- read.table(file = '/Users/bingjing/Desktop/LIRI/exp_seq.tsv', sep = '\t', header = TRUE) 
+pasAnno <- read.table(file = '~/exp_seq.tsv', sep = '\t', header = TRUE) 
 ```
 
 
 ```{r}
-pasBnno <- read.table(file = '/Users/bingjing/Desktop/LIRI/donor.tsv', sep = '\t', header = TRUE)
+pasBnno <- read.table(file = '~/donor.tsv', sep = '\t', header = TRUE)
 ```
 
 ```{r}
@@ -38,7 +38,7 @@ head(pasAnno1)
 
 Change raw_ read_ The data type of the count column is int
 ```{r}
-write.csv(pasAnno1,file="/Users/bingjing/Desktop/drawdata.csv",quote = F)
+write.csv(pasAnno1,file="~/drawdata.csv",quote = F)
 ```
 
 ```{r}
@@ -46,14 +46,14 @@ data <- read.table("/Users/bingjing/Desktop/drawdata.csv",header = TRUE, na.stri
 class(data$raw_read_count)
 data$raw_read_count <- as.integer(data$raw_read_count)
 class(data$raw_read_count)
-write.csv(data, file = "/Users/bingjing/Desktop/rawdata.csv", row.names = F, quote = F, na="0")
+write.csv(data, file = "~/rawdata.csv", row.names = F, quote = F, na="0")
 ```
 
 
 
 
 ```{r}
-pasAnno2<-read.csv("/Users/bingjing/Desktop/rawdata.csv",row.names = 1)
+pasAnno2<-read.csv("~/rawdata.csv",row.names = 1)
 ```
 ```{r}
 head(pasAnno2)
@@ -88,12 +88,12 @@ pasAnno4<- filter(pasAnno3, pasAnno3$DO50855 !='NA')
 ```
 
 ```{r}
-write.csv(pasAnno4, file = "/Users/bingjing/Desktop/rawdata1.csv", row.names = F, quote = F, na="0")
+write.csv(pasAnno4, file = "~/rawdata1.csv", row.names = F, quote = F, na="0")
 ```
 
 
 ```{r}
-mycounts<-read.csv ("/Users/bingjing/Desktop/rawdata1.csv",row.names = 1)
+mycounts<-read.csv ("~/rawdata1.csv",row.names = 1)
 ```
 
 ```{r}
@@ -108,7 +108,7 @@ df_x=read.csv("filtered_new.csv",stringsAsFactors = F)
 ```
 
 ```{r}
-save(pasAnno5,file="/Users/bingjing/Desktop/drawdata2.rdata")
+save(pasAnno5,file="~/drawdata2.rdata")
 ```
 
 
