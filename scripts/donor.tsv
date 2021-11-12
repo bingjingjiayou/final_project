@@ -1,0 +1,107 @@
+icgc_donor_id	project_code	study_donor_involved_in	submitted_donor_id	donor_sex	donor_vital_status	disease_status_last_followup	donor_relapse_type	donor_age_at_diagnosis	donor_age_at_enrollment	donor_age_at_last_followup	donor_relapse_interval	donor_diagnosis_icd10	donor_tumour_staging_system_at_diagnosis	donor_tumour_stage_at_diagnosis	donor_tumour_stage_at_diagnosis_supplemental	donor_survival_time	donor_interval_of_last_followup	prior_malignancy	cancer_type_prior_malignancy	cancer_history_first_degree_relative
+DO50855	LIRI-JP	PCAWG	RK326	male	alive			47	47			C22	TNM by LCSGJ	2		570		no		no
+DO50857	LIRI-JP	PCAWG	RK337	male	alive			72	72			C22	TNM by LCSGJ	2		210		no		yes
+DO50859	LIRI-JP	PCAWG	RK338	male	alive			77	77			C22	TNM by LCSGJ	2		180		yes	C25	no
+DO50840	LIRI-JP	PCAWG	RK285	male	alive			49	49			C22	TNM by LCSGJ	2		330		no		no
+DO50822	LIRI-JP	PCAWG	RK268	male	alive			66	66			C22	TNM by LCSGJ	2		510		no		no
+DO50825	LIRI-JP	PCAWG	RK270	male	alive			70	70			C22	TNM by LCSGJ	2		390		no		no
+DO50817	LIRI-JP	PCAWG	RK264	male	alive			75	75			C22	TNM by LCSGJ	2		390		no		no
+DO50818	LIRI-JP	PCAWG	RK265	male	alive			65	65			C22	TNM by LCSGJ	2		510		no		no
+DO50819	LIRI-JP	PCAWG	RK266	female	alive			72	72			C22	TNM by LCSGJ	2		510		no		no
+DO50813	LIRI-JP	PCAWG	RK260	male	alive			56	56			C22	TNM by LCSGJ	2		420		no		no
+DO50816	LIRI-JP	PCAWG	RK263	male	alive			63	63			C22	TNM by LCSGJ	2		390		no		no
+DO50808	LIRI-JP	PCAWG	RK257	male	alive			68	68			C22	TNM by LCSGJ	2		570		yes	C67	no
+DO50800	LIRI-JP	PCAWG	RK237	male	alive			74	74			C22	TNM by LCSGJ	2		510		no		yes
+DO50802	LIRI-JP	PCAWG	RK241	male	alive			49	49			C22	TNM by LCSGJ	2		930		yes	C18	yes
+DO50804	LIRI-JP	PCAWG	RK244	male	alive			81	81			C22	TNM by LCSGJ	2		720		yes	C66	unknown
+DO50805	LIRI-JP	PCAWG	RK245	male	alive			72	72			C22	TNM by LCSGJ	2		690		yes	C61	no
+DO50799	LIRI-JP	PCAWG	RK236	female	alive			66	66			C22	TNM by LCSGJ	2		540		no		yes
+DO50789	LIRI-JP	PCAWG	RK230	female	alive			73	73			C22	TNM by LCSGJ	2		570		yes	C16	yes
+DO50774	LIRI-JP	PCAWG	RK222	female	alive			68	68			C22	TNM by LCSGJ	2		720		no		no
+DO45273	LIRI-JP	PCAWG	RK180	male	alive			62	62			C22	TNM by LCSGJ	2		480		no		no
+DO45253	LIRI-JP	PCAWG	RK147	male	alive			50	50			C22	TNM by LCSGJ	2		870		no		yes
+DO45251	LIRI-JP	PCAWG	RK146	female	alive			57	57			C22	TNM by LCSGJ	2		900		no		no
+DO45247	LIRI-JP	PCAWG	RK141	female	alive			31	31			C22	TNM by LCSGJ	2		210		no		no
+DO45245	LIRI-JP	PCAWG	RK138	female	deceased			75	75			C22	TNM by LCSGJ	2		240		yes	C16	unknown
+DO45239	LIRI-JP	PCAWG	RK130	male	alive			42	42			C22	TNM by LCSGJ	2		870		no		no
+DO45237	LIRI-JP	PCAWG	RK126	male	alive			58	58			C22	TNM by LCSGJ	2		900		no		no
+DO45231	LIRI-JP	PCAWG	RK109	male	alive			84	84			C22	TNM by LCSGJ	2		930		no		no
+DO45227	LIRI-JP	PCAWG	RK107	female	alive			57	57			C22	TNM by LCSGJ	2		1020		no		no
+DO45219	LIRI-JP	PCAWG	RK099	male	alive			78	78			C22	TNM by LCSGJ	2		1080		no		no
+DO45215	LIRI-JP	PCAWG	RK096	male	alive			65	65			C22	TNM by LCSGJ	2		1170		no		yes
+DO45203	LIRI-JP	PCAWG	RK083	female	alive			71	71			C22	TNM by LCSGJ	2		1170		no		no
+DO45205	LIRI-JP	PCAWG	RK084	female	deceased			67	67			C22	TNM by LCSGJ	2		90		no		yes
+DO45165	LIRI-JP	PCAWG	RK054	male	alive			75	75			C22	TNM by LCSGJ	2		690		no		yes
+DO45167	LIRI-JP	PCAWG	RK055	male	deceased			67	67			C22	TNM by LCSGJ	2		1440		no		yes
+DO45161	LIRI-JP	PCAWG	RK051	male	deceased			74	74			C22	TNM by LCSGJ	2		540		yes	C18	no
+DO45163	LIRI-JP	PCAWG	RK052	male	alive			76	76			C22	TNM by LCSGJ	2		960		no		yes
+DO45155	LIRI-JP	PCAWG	RK048	male	alive			69	69			C22	TNM by LCSGJ	2		2160		yes	C67	yes
+DO45157	LIRI-JP	PCAWG	RK049	male	alive			62	62			C22	TNM by LCSGJ	2		1980		no		no
+DO45153	LIRI-JP	PCAWG	RK047	female	alive			77	77			C22	TNM by LCSGJ	2		1380		no		no
+DO45147	LIRI-JP	PCAWG	RK042	male	deceased			57	57			C22	TNM by LCSGJ	2		720		no		yes
+DO45149	LIRI-JP	PCAWG	RK044	female	alive			70	70			C22	TNM by LCSGJ	2		1260		no		no
+DO45141	LIRI-JP	PCAWG	RK036	male	alive			73	73			C22	TNM by LCSGJ	2		1320		no		no
+DO45123	LIRI-JP	PCAWG	RK025	female	deceased			78	78			C22	TNM by LCSGJ	2		570		no		yes
+DO45115	LIRI-JP	PCAWG	RK021	male	alive			81	81			C22	TNM by LCSGJ	2		840		yes	C67	no
+DO45117	LIRI-JP	PCAWG	RK022	female	deceased			73	73			C22	TNM by LCSGJ	2		1110		no		yes
+DO45111	LIRI-JP	PCAWG	RK019	male	alive			74	74			C22	TNM by LCSGJ	2		1590		no		yes
+DO45107	LIRI-JP	PCAWG	RK016	female	alive			63	63			C22	TNM by LCSGJ	2		1710		no		yes
+DO45109	LIRI-JP	PCAWG	RK018	male	alive			63	63			C22	TNM by LCSGJ	2		1590		no		no
+DO45101	LIRI-JP	PCAWG	RK012	male	alive			63	63			C22	TNM by LCSGJ	2		1680		no		unknown
+DO45199	LIRI-JP	PCAWG	RK080	female	alive			86	86			C22	TNM by LCSGJ	2		1350		no		no
+DO45197	LIRI-JP	PCAWG	RK079	male	alive			51	51			C22	TNM by LCSGJ	2		1170		no		no
+DO45189	LIRI-JP	PCAWG	RK069	female	alive			85	85			C22	TNM by LCSGJ	2		1200		no		yes
+DO45183	LIRI-JP	PCAWG	RK066	female	deceased			72	72			C22	TNM by LCSGJ	2		570		no		no
+DO45185	LIRI-JP	PCAWG	RK067	male	alive			89	89			C22	TNM by LCSGJ	2		600		no		unknown
+DO45191	LIRI-JP	PCAWG	RK071	female	alive			61	61			C22	TNM by LCSGJ	2		1200		no		yes
+DO45179	LIRI-JP	PCAWG	RK064	female	alive			78	78			C22	TNM by LCSGJ	2		600		no		yes
+DO45175	LIRI-JP	PCAWG	RK062	male	alive			74	74			C22	TNM by LCSGJ	2		1140		no		yes
+DO45181	LIRI-JP	PCAWG	RK065	female	alive			84	84			C22	TNM by LCSGJ	2		1200		no		yes
+DO227643	LIRI-JP		RK039	male	alive			79	79			C22	TNM by LCSGJ	2		1260		no		no
+DO45301	LIRI-JP	PCAWG	RK309	male	deceased			56	56			C22	TNM by LCSGJ	2		1440		no		unknown
+DO48761	LIRI-JP	PCAWG	RK220	male	alive			55	55			C22	TNM by LCSGJ	2		870		no		yes
+DO48760	LIRI-JP	PCAWG	RK219	female	alive			70	70			C22	TNM by LCSGJ	2		690		no		no
+DO48751	LIRI-JP	PCAWG	RK214	male	deceased			68	68			C22	TNM by LCSGJ	2		480		no		no
+DO48743	LIRI-JP	PCAWG	RK211	female	alive			69	69			C22	TNM by LCSGJ	2		570		yes	"C50, C05"	no
+DO48742	LIRI-JP	PCAWG	RK210	male	alive			76	76			C22	TNM by LCSGJ	2		600		no		no
+DO48733	LIRI-JP	PCAWG	RK201	male	alive			72	72			C22	TNM by LCSGJ	2		600		no		yes
+DO48730	LIRI-JP	PCAWG	RK199	female	alive			73	73			C22	TNM by LCSGJ	2		630		no		no
+DO48727	LIRI-JP	PCAWG	RK197	female	deceased			81	81			C22	TNM by LCSGJ	2		390		no		no
+DO48728	LIRI-JP	PCAWG	RK198	female	alive			74	74			C22	TNM by LCSGJ	2		150		yes	D11	yes
+DO48720	LIRI-JP	PCAWG	RK191	female	alive			62	62			C22	TNM by LCSGJ	2		570		no		no
+DO48716	LIRI-JP	PCAWG	RK187	male	alive			71	71			C22	TNM by LCSGJ	2		720		no		yes
+DO48715	LIRI-JP	PCAWG	RK186	female	deceased			58	58			C22	TNM by LCSGJ	2		690		no		no
+DO48712	LIRI-JP	PCAWG	RK185	male	alive			50	50			C22	TNM by LCSGJ	2		810		no		yes
+DO48719	LIRI-JP	PCAWG	RK190	male	alive			80	80			C22	TNM by LCSGJ	2		690		no		no
+DO48706	LIRI-JP	PCAWG	RK181	male	alive			72	72			C22	TNM by LCSGJ	2		870		no		no
+DO48701	LIRI-JP	PCAWG	RK175	male	alive			78	78			C22	TNM by LCSGJ	2		780		no		yes
+DO48700	LIRI-JP	PCAWG	RK171	female	alive			78	78			C22	TNM by LCSGJ	2		810		no		yes
+DO48679	LIRI-JP	PCAWG	RK081	male	alive			72	72			C22	TNM by LCSGJ	2		1200		no		no
+DO48674	LIRI-JP	PCAWG	RK070	male	alive			80	80			C22	TNM by LCSGJ	2		1260		no		no
+DO48672	LIRI-JP	PCAWG	RK059	male	alive			81	81			C22	TNM by LCSGJ	2		450		yes	C34	yes
+DO48697	LIRI-JP	PCAWG	RK163	female	deceased			64	64			C22	TNM by LCSGJ	2		810		no		no
+DO48693	LIRI-JP	PCAWG	RK149	male	alive			71	71			C22	TNM by LCSGJ	2		900		no		yes
+DO48695	LIRI-JP	PCAWG	RK162	male	alive			77	77			C22	TNM by LCSGJ	2		720		yes	C34	no
+DO48681	LIRI-JP	PCAWG	RK111	male	alive			57	57			C22	TNM by LCSGJ	2		900		no		no
+DO45095	LIRI-JP	PCAWG	RK005	male	alive			66	66			C22	TNM by LCSGJ	2		1620		no		no
+DO45096	LIRI-JP	PCAWG	RK006	male	deceased			69	69			C22	TNM by LCSGJ	2		1290		no		no
+DO45091	LIRI-JP	PCAWG	RK001	male	deceased			56	56			C22	TNM by LCSGJ	2		1320		no		no
+DO45093	LIRI-JP	PCAWG	RK003	male	deceased			71	71			C22	TNM by LCSGJ	2		720		no		no
+DO23538	LIRI-JP	PCAWG	RK131	male	alive			67	67			C22	TNM by LCSGJ	2		450		no		no
+DO23537	LIRI-JP	PCAWG	RK128	male	deceased			79	79			C22	TNM by LCSGJ	2		900		yes	C16	no
+DO23536	LIRI-JP	PCAWG	RK125	male	alive			56	56			C22	TNM by LCSGJ	2		930		no		no
+DO23534	LIRI-JP	PCAWG	RK120	male	alive			60	60			C22	TNM by LCSGJ	2		840		no		no
+DO23533	LIRI-JP	PCAWG	RK118	male	alive			61	61			C22	TNM by LCSGJ	2		900		no		no
+DO23546	LIRI-JP	PCAWG	RK152	male	alive			63	63			C22	TNM by LCSGJ	2		1050		no		unknown
+DO23545	LIRI-JP	PCAWG	RK151	male	deceased			67	67			C22	TNM by LCSGJ	2		570		yes	C16	no
+DO23544	LIRI-JP	PCAWG	RK150	male	alive			67	67			C22	TNM by LCSGJ	2		960		no		no
+DO23543	LIRI-JP	PCAWG	RK145	male	alive			63	63			C22	TNM by LCSGJ	2		1020		no		no
+DO23541	LIRI-JP	PCAWG	RK140	male	alive			65	65			C22	TNM by LCSGJ	2		930		no		no
+DO23517	LIRI-JP	PCAWG	RK075	male	alive			62	62			C22	TNM by LCSGJ	2		1200		no		yes
+DO23515	LIRI-JP	PCAWG	RK060	male	alive			71	71			C22	TNM by LCSGJ	2		1230		yes	C16	yes
+DO23514	LIRI-JP	PCAWG	RK057	male	alive			64	64			C22	TNM by LCSGJ	2		1290		no		no
+DO23510	LIRI-JP	PCAWG	RK038	female	alive			80	80			C22	TNM by LCSGJ	2		870		no		yes
+DO23518	LIRI-JP	PCAWG	RK076	male	alive			67	67			C22	TNM by LCSGJ	2		1320		no		no
+DO23528	LIRI-JP	PCAWG	RK105	female	alive			45	45			C22	TNM by LCSGJ	2		1020		no		yes
+DO23524	LIRI-JP	PCAWG	RK095	female	alive			71	71			C22	TNM by LCSGJ	2		1050		yes	C50	no
+DO23508	LIRI-JP	PCAWG	RK028	female	alive			79	79			C22	TNM by LCSGJ	2		390		no		no
