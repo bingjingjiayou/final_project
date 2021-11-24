@@ -5,6 +5,7 @@
 <img width="615" alt="1" src="https://user-images.githubusercontent.com/89620829/143190603-543020eb-2a7c-499f-b797-90aed4b78fdc.png">
 <img width="608" alt="2" src="https://user-images.githubusercontent.com/89620829/143190634-b1de7c99-6826-4c38-995a-5ebcf32ff756.png">
 <img width="606" alt="3" src="https://user-images.githubusercontent.com/89620829/143195914-c9c42d10-b0ef-4afc-8341-4a16a2df32e5.png">
+<img width="611" alt="4" src="https://user-images.githubusercontent.com/89620829/143196579-400134ae-95e8-404b-82e5-75df95395cdd.png">
 
 # Section 2: Next Steps
 
