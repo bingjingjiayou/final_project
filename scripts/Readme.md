@@ -52,5 +52,12 @@
 ![image](https://user-images.githubusercontent.com/89620829/144679531-7894d09f-aa03-4be8-914f-c17b73c00bc1.png)
 
 # Step 2：Analysis
- 
+ ## 1， According to the analysis results, I got 171 differentially expressed genes in P<0.01, and the most significant genes were found to be related to up regulation or down expression of cancer genes, such as breast cancer and neurocytoma. These genes are not only differentially expressed in the 2 stage of liver cancer, but may also mediate the expression of other cancer genes. There are also some genes that mediate cell fusion and conduction. The following information can be obtained by querying the database:
+## SYNPR: a transport vesicle that mediates the transport from the intracellular compartment to the plasma membrane and fuses with the plasma membrane to release various cargo molecules, such as proteins or hormones, through exocytosis. It also mediates the expression of synaptic proteins, that is, the connection between the axon of one neuron and the dendrites, muscle fibers or glial cells of another neuron. It may also be the target gene of some miRNAs. Therefore, the analysis of this gene may belong to a general variation, which will be differentially expressed in many tumors.
+## PCDH8: it is the down-regulated gene of neuroblastoma and the target gene of some proteins in embryonic stem cells. It also belongs to ESR1 positive MCF-7 cells (breast cancer).
+## SPRR1B: down regulated gene expression in primary epithelial breast cancer cell cultures overexpressing E2F3 (ID = 1871] gene).It is also a gene that mediates the programmed death of epidermal cells. It also mediates the high expression of immune cytokines under some stimuli.
+## RGR: it can down regulate the expression of MGMT [GeneID=4255] gene in glioma and increase the CCND1 in breast cancer [gene ID = 595].   Genes. Other studies have shown that this gene is related to biological light sensitivity.
+## CALML5: belongs to the down regulated gene [GeneID=4582] in cancer progenitor cells corresponding to MUC1 positive side population (SP) MCF7 cells (breast cancer). And can lead to changes in cell morphology or behavior due to exposure to activators such as cells or soluble ligands.
+
+## 2，
 
