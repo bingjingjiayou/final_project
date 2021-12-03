@@ -32,6 +32,9 @@
  ## 4, Check the reading count of a single gene across groups through the function plotcounts, specify the gene with the minimum p value, and make the following figure, as shown in Figure plot. It can be seen that there is no significant difference in the count of the minimum p value between the two groups.
  ![image](https://user-images.githubusercontent.com/89620829/144663007-18868062-01f3-45d9-b862-a10d0e731716.png)
 
+## 5，Multifactor design: use the design formula containing additional variables to analyze the experiments with multiple factor influence counts, and analyze the log2 multiple change, P value and adjusted p value of variables other than the main variable.
+
+## 6，
  
 
  
