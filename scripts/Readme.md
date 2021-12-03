@@ -7,6 +7,7 @@
 
 ## 2、 Some of these data are selected, that is, whether the diagnosis age as the main variable is a high incidence period, covariate gender and family history. See documents Anno1 and Bnno1.
 
+
 ## 3、 Because some patients in my data have been tested for many times and some have only been tested once, the data are processed and the first detection value is taken for analysis.
 
 ## 4、 Adjust the length and width format, and turn donor_ ID becomes the first line. See anno3.
