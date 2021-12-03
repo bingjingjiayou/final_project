@@ -24,4 +24,5 @@
 
 ## 2、 Thus, the log2 multiple change plot MA1 of the average standardized count of all samples in a given variable can be obtained. And the plot ma2 diagram after eliminating the noise related to the log2 multiple change of low count genes. See MA1 and MA2.
 ![image](https://user-images.githubusercontent.com/89620829/144574360-1bad7e68-4285-4dcf-a8a7-1467e22a0353.png)
+![image](https://user-images.githubusercontent.com/89620829/144574527-d32ec357-26a8-4e0f-b7a6-15e41a7196b8.png)
 
