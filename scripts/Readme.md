@@ -29,7 +29,7 @@
  ## 3, Looking at the three normal distribution maps, we can see that the original adaptive distribution map is the best. See normal distribution diagram.
  ![image](https://user-images.githubusercontent.com/89620829/144577165-49ec853f-3b1a-496f-9e4c-e12a84abfb4f.png)
  
- ## 4, Check the reading count of a single gene across groups through the function plotcounts, specify the gene with the minimum p value, and make the following figure, as shown in Figure plot.
+ ## 4, Check the reading count of a single gene across groups through the function plotcounts, specify the gene with the minimum p value, and make the following figure, as shown in Figure plot. It can be seen that there is no significant difference in the count of the minimum p value between the two groups.
  ![image](https://user-images.githubusercontent.com/89620829/144663007-18868062-01f3-45d9-b862-a10d0e731716.png)
 
  
