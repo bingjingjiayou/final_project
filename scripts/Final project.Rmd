@@ -1,0 +1,471 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+Install DESeq2
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("DESeq2")
+```
+
+```{r}
+browseVignettes("DESeq2")
+```
+load data in R
+
+```{r}
+Anno <- read.table(file = '/Users/bingjing/Desktop/LIRI/exp_seq.tsv', sep = '\t', header = TRUE) 
+```
+```{r}
+Bnno<-read.csv("/Users/bingjing/Desktop/LIRI/donor.csv")
+```
+Delete extra columns,retain data for analysis
+```{r}
+library(readxl)
+```
+```{r}
+Anno1<-subset(Anno,select = c(1,8,10))
+```
+
+check data Anno1
+```{r}
+head(Anno1)
+```
+
+
+```{r}
+Bnno1<-subset(Bnno,select = c(1,5,9,21))
+```
+
+check data Bnno1
+```{r}
+head(Bnno1)
+```
+Change raw_ read_ The data type of the count column is int
+```{r}
+write.csv(Anno1,file="/Users/bingjing/Desktop/Final project/Adata.csv",quote = F)
+```
+```{r}
+data <- read.table("/Users/bingjing/Desktop/Final project/Adata.csv",header = TRUE, na.strings = c("NA"), sep = ',')
+class(data$raw_read_count)
+data$raw_read_count <- as.integer(data$raw_read_count)
+class(data$raw_read_count)
+write.csv(data, file = "/Users/bingjing/Desktop/Final project/Adata1.csv", row.names = F, quote = F, na="0")
+```
+```{r}
+Anno2<-read.csv("/Users/bingjing/Desktop/Final project/Adata1.csv",row.names = 1)
+```
+```{r}
+head(Anno2)
+```
+
+
+Some patients measured several times and took only the first one containing multiple data
+```{r}
+require(tidyverse)
+temp <- Anno2 %>% 
+distinct(icgc_donor_id, gene_id, .keep_all = TRUE)
+```
+
+Change data format (length data to width data)
+```{r}
+require(tidyverse)
+dat <- temp  
+Anno3<-  pivot_wider(temp,names_from = icgc_donor_id, 
+              values_from = raw_read_count) 
+```
+```{r}
+head(Anno3)
+```
+```{r}
+write.csv(Anno3, file = "/Users/bingjing/Desktop/Final project/Adata3.csv", row.names = F, quote = F, na="0")
+```
+```{r}
+
+
+```
+
+After reading the file, change the first column to row name
+```{r}
+getwd()
+Anno4<-read.csv("/Users/bingjing/Desktop/Final project/Adata3.csv",row.names = 1)
+
+```
+
+
+Row name and column name exchange
+```{r}
+Anno5 <- t(Anno4)
+```
+Store and read the data again, let gene_ ID becomes the first column
+```{r}
+write.csv(Anno5, file = "/Users/bingjing/Desktop/Final project/Adata5.csv", row.names = T, quote = F, na="0")
+```
+```{r}
+Anno6<-read.csv("/Users/bingjing/Desktop/Final project/Adata5.csv",header = T)
+```
+
+Change the column name of the first column to be consistent with that in the donor file
+```{r}
+colnames(Anno6)[1] <- "icgc_donor_id"
+```
+
+```{r}
+
+```
+Take the first column gene_id in the donor file
+```{r}
+Bnno2<-subset(Bnno1,select = c(1))
+```
+```{r}
+
+```
+According to the number of cases in the donor file, only the cases of stage II tumor are retained, and the redundant cases in anno6 are removed
+```{r}
+Anno7<-inner_join(Bnno2,Anno6)
+```
+
+```{r}
+
+```
+
+After storing and reading the file, change the first column to row name
+```{r}
+write.csv(Anno7, file = "/Users/bingjing/Desktop/Final project/Adata7.csv", row.names = F, quote = F, na="0")
+```
+```{r}
+Anno8<-read.csv("/Users/bingjing/Desktop/Final project/Adata7.csv",row.names = 1)
+```
+Row name and column name exchange
+```{r}
+Anno9 <- t(Anno8)
+write.csv(Anno9, file = "/Users/bingjing/Desktop/Final project/Adata9.csv", row.names = T, quote = F, na="0")
+```
+Compare donor_ Is the ID consistent
+```{r}
+colnames(Anno9) == Bnno1$icgc_donor_id
+```
+
+```{r}
+
+```
+Summarized Experiment input
+```{r}
+library("DESeq2")
+dds<-DESeqDataSetFromMatrix(countData = Anno9,
+                            colData = Bnno1,
+                               design = ~donor_sex + cancer_history_first_degree_relative + donor_age_at_diagnosis)
+```
+```{r}
+
+```
+Pre-filtering：keep only rows that have at least 10 reads total
+```{r}
+keep <- rowSums(counts(dds)) >= 10
+dds <- dds[keep,]
+```
+
+Note on factor levels
+```{r}
+dds$donor_age_at_diagnosis <- factor(dds$donor_age_at_diagnosis, levels = c("high incidence ","other group"))
+```
+Differential expression analysis
+```{r}
+dds<-DESeq(dds)
+res<-results(dds)
+```
+Log fold change shrinkage for visualization and ranking
+
+```{r}
+resultsNames(dds)
+```
+```{r}
+resLFC <- lfcShrink(dds, coef="donor_age_at_diagnosis_other.group_vs_high.incidence.", type="apeglm")
+resLFC
+```
+```{r}
+
+```
+
+Speed-up and parallelization thoughts
+```{r}
+library("BiocParallel")
+register(MulticoreParam(4))
+```
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("apeglm")
+```
+```{r}
+browseVignettes("apeglm")
+```
+p-values and adjusted p-values
+```{r}
+resOrdered <- res[order(res$pvalue),]
+```
+```{r}
+summary(res)
+```
+check the number of P values less than 0.1
+```{r}
+sum(res$padj < 0.1, na.rm=TRUE)
+```
+
+```{r}
+res05 <- results(dds, alpha=0.05)
+summary(res05)
+```
+
+```{r}
+
+sum(res05$padj < 0.01, na.rm=TRUE)
+```
+Independent hypothesis weighting
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("IHW")
+```
+
+```{r}
+library("IHW")
+resIHW <- results(dds, filterFun=ihw)
+summary(resIHW)
+sum(resIHW$padj < 0.01, na.rm=TRUE)
+metadata(resIHW)$ihwResult
+```
+Exploring and exporting results，MA-plot
+```{r}
+plotMA(res, ylim=c(-25,25))
+```
+```{r}
+plotMA(resLFC, ylim=c(-2,2))
+```
+Alternative shrinkage estimators
+```{r}
+resultsNames(dds)
+```
+
+```{r}
+resNorm <- lfcShrink(dds, coef=2, type="normal")
+resAsh <- lfcShrink(dds, coef=2, type="ashr")
+```
+install "ashr"
+```{r}
+install.packages("devtools")
+library(devtools)
+install_github("stephens999/ashr")
+```
+```{r}
+library(ashr)
+```
+
+```{r}
+par(mfrow=c(1,3), mar=c(4,4,2,1))
+xlim <- c(1,1e8); ylim <- c(-3,3)
+plotMA(resLFC, xlim=xlim, ylim=ylim, main="apeglm")
+plotMA(resNorm, xlim=xlim, ylim=ylim, main="normal")
+plotMA(resAsh, xlim=xlim, ylim=ylim, main="ashr")
+```
+
+Plot counts
+
+```{r}
+plotCounts(dds, gene=which.min(res$padj), intgroup="donor_age_at_diagnosis")
+
+```
+```{r}
+d <- plotCounts(dds, gene=which.min(res$padj), intgroup="donor_age_at_diagnosis", 
+                returnData=TRUE)
+library("ggplot2")
+ggplot(d, aes(x=donor_age_at_diagnosis, y=count)) + 
+  geom_point(position=position_jitter(w=0.1,h=0)) + 
+  scale_y_log10(breaks=c(2,10,40))
+```
+
+
+```{r}
+#plotCounts(dds, gene=which.min(res$padj), intgroup="donor_sex")
+```
+
+
+```{r}
+
+
+```
+More information on results columns
+```{r}
+mcols(res)$description
+```
+Exporting results to CSV files
+```{r}
+write.csv(as.data.frame(resOrdered), 
+          file="donor_age_at_diagnosis.csv")
+```
+Export the results through the adjusted p-value threshold
+```{r}
+resSig <- subset(resOrdered, padj < 0.01)
+write.csv(as.data.frame(resSig), 
+          file="donor_age_at_diagnosis1.csv")
+resSig
+```
+```{r}
+```
+
+
+Multi-factor designs
+```{r}
+colData(dds)
+```
+```{r}
+ddsMF <- dds
+```
+
+```{r}
+levels(ddsMF$donor_age_at_diagnosis)
+```
+
+```{r}
+levels(ddsMF$donor_age_at_diagnosis) <- sub("-.*", "", levels(ddsMF$donor_age_at_diagnosis))
+levels(ddsMF$donor_age_at_diagnosis)
+```
+
+```{r}
+
+design(ddsMF) <- formula(~ donor_age_at_diagnosis + donor_sex + cancer_history_first_degree_relative)
+ddsMF <- DESeq(ddsMF)
+```
+```{r}
+resMF <- results(ddsMF)
+head(resMF)
+```
+
+```{r}
+resMFType <- results(ddsMF,
+                     contrast=c("donor_age_at_diagnosis", "high incidence ","other group"))
+head(resMFType)
+```
+Data transformations and visualization,Extracting transformed values
+```{r}
+vsd <- vst(dds, blind=FALSE)
+rld <- rlog(dds, blind=FALSE)
+head(assay(vsd), 3)
+
+```
+Effects of transformations on the variance
+```{r}
+ntd <- normTransform(dds)
+library("vsn")
+meanSdPlot(assay(ntd))
+```
+
+install vsn
+```{r}
+  if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("vsn")
+```
+
+
+```{r}
+meanSdPlot(assay(vsd))
+```
+
+```{r}
+meanSdPlot(assay(rld))
+```
+
+Heatmap of the count matrix
+```{r}
+library("pheatmap")
+select <- order(rowMeans(counts(dds,normalized=TRUE)),
+                decreasing=TRUE)[1:20]
+df <- as.data.frame(colData(dds)[,c("donor_age_at_diagnosis","donor_sex","cancer_history_first_degree_relative")])
+pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
+         cluster_cols=FALSE, annotation_col=df)
+```
+install "heatmaps"
+```{r}
+install.packages("pheatmap")
+
+
+```
+```{r}
+pheatmap(assay(vsd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
+         cluster_cols=FALSE, annotation_col=df)
+```
+
+```{r}
+pheatmap(assay(rld)[select,], cluster_rows=FALSE, show_rownames=FALSE,
+         cluster_cols=FALSE, annotation_col=df)
+```
+
+Heatmap of the sample-to-sample distances
+
+```{r}
+sampleDists <- dist(t(assay(vsd)))
+```
+
+```{r}
+library("RColorBrewer")
+sampleDistMatrix <- as.matrix(sampleDists)
+rownames(sampleDistMatrix) <- paste(rld$condition, rld$type, sep="-")
+colnames(sampleDistMatrix) <- NULL
+colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(255)
+pheatmap(sampleDistMatrix,
+         clustering_distance_rows=sampleDists,
+         clustering_distance_cols=sampleDists,
+         col=colors)
+```
+
+Principal component plot of the samples,compare the first primary variable with the first covariat
+```{r}
+plotPCA(vsd, intgroup=c("donor_age_at_diagnosis","donor_sex"))
+```
+customize the PCA plot using the ggplot function,compare the first primary variable with the first covariat
+```{r}
+pcaData <- plotPCA(vsd, intgroup=c("donor_age_at_diagnosis","donor_sex"), returnData=TRUE)
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+ggplot(pcaData, aes(PC1, PC2, color=donor_age_at_diagnosis, shape=donor_sex)) +
+  geom_point(size=3) +
+  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
+  ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
+  coord_fixed()
+```
+```{r}
+
+
+```
+
+```{r}
+
+```
+Principal component plot of the samples,compare the second primary variable with the second covariate
+```{r}
+plotPCA(vsd, intgroup=c("donor_age_at_diagnosis","cancer_history_first_degree_relative"))
+```
+```{r}
+
+```
+customize the PCA plot using the ggplot function,compare the second primary variable with the second covariate
+```{r}
+pcaData <- plotPCA(vsd, intgroup=c("donor_age_at_diagnosis","cancer_history_first_degree_relative"), returnData=TRUE)
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+ggplot(pcaData, aes(PC1, PC2, color=donor_age_at_diagnosis, shape=cancer_history_first_degree_relative)) +
+  geom_point(size=3) +
+  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
+  ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
+  coord_fixed()
+```
+
