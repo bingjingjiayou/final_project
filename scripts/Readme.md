@@ -37,6 +37,7 @@
 ## 6，Transform and visualize multivariable data. Firstly, the influence of transformation on square difference is analyzed, and three transformations are used, NTD, VSD and rld. The results show that the variance of rld transform is the smallest.
 ![image](https://user-images.githubusercontent.com/89620829/144665326-18a2e366-eb0f-47a1-831d-73e95e1f3d8c.png)
 ![image](https://user-images.githubusercontent.com/89620829/144665381-2a27ce1d-251a-4689-aca0-5bceb05e328d.png)
+![image](https://user-images.githubusercontent.com/89620829/144665433-669deb43-3f47-466a-987e-3606831eaa54.png)
 
  
 
