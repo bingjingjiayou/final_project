@@ -59,5 +59,5 @@
 ## RGR: it can down regulate the expression of MGMT [GeneID=4255] gene in glioma and increase the CCND1 in breast cancer [gene ID = 595].   Genes. Other studies have shown that this gene is related to biological light sensitivity.
 ## CALML5: belongs to the down regulated gene [GeneID=4582] in cancer progenitor cells corresponding to MUC1 positive side population (SP) MCF7 cells (breast cancer). And can lead to changes in cell morphology or behavior due to exposure to activators such as cells or soluble ligands.
 
-## 2，
+## 2，It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
 
