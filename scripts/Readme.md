@@ -12,9 +12,9 @@
 ## 3、 Because some patients in my data have been tested for many times and some have only been tested once, the data are processed and the first detection value is taken for analysis.
 
 ## 4、 Adjust the length and width format, and turn donor_ ID becomes the first line. See Anno3.
+![image](https://user-images.githubusercontent.com/89620829/144573604-cb4d3b39-ff53-4219-93b7-947e5dba14f6.png)
 
-
-## 5、 Since my count data is the data of all patients, I based on 106 donors of phase II patients_ ID is used to merge the number of cases in count, and only the data of 106 patients are taken. And adjust the file to the file anno9 that can be analyzed by deseq2.
+## 5、 Since my count data is the data of all patients, I based on 106 donors of phase II patients_ ID is used to merge the number of cases in count, and only the data of 106 patients are taken. And adjust the file to the file Anno9 that can be analyzed by deseq2.
 
 ## 1、 The processed data were analyzed with deseq2 to compare the expression differences of different genes in patients. According to the analysis results, there are 317 differential genes with P < 0.1, 252 differential genes with P < 0.05 and 171 differential genes with P < 0.05. See Figure P < 0.01.
 
