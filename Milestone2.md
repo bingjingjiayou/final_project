@@ -3,6 +3,7 @@
 ## The adjusted data have been analyzed by deseq expression difference analysis, and the expression difference map under the main variable has been obtained.
 ![image](https://user-images.githubusercontent.com/89620829/144679738-8284209d-1264-473b-bf32-72dfb7efe038.png)
 ![image](https://user-images.githubusercontent.com/89620829/144679787-71652da7-42a3-469c-8936-3288d17cbfe5.png)
+![image](https://user-images.githubusercontent.com/89620829/144679935-0941369e-f340-46e5-a8cd-f0dee302a098.png)
 
 
 # Section 2: Next Steps
