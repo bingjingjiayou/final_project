@@ -18,6 +18,8 @@
 ![image](https://user-images.githubusercontent.com/89620829/144573720-4f5e57df-2755-4ccc-a1c5-6c41752c432a.png)
 
 # Step 2：Deseq2 analysis data
+
 ## 1、 The processed data were analyzed with deseq2 to compare the expression differences of different genes in patients. According to the analysis results, there are 317 differential genes with P < 0.1, 252 differential genes with P < 0.05 and 171 differential genes with P < 0.05. See Figure P < 0.01.
+![image](https://user-images.githubusercontent.com/89620829/144574004-4a17fa70-0058-40dc-91bd-4a4c64efee4d.png)
 
 ## 2、 Thus, the log2 multiple change plot MA1 of the average standardized count of all samples in a given variable can be obtained. And the plot ma2 diagram after eliminating the noise related to the log2 multiple change of low count genes. See MA1 and MA2.
