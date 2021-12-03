@@ -51,6 +51,6 @@
 ## Then compare the difference between the second main variable（donor_age_at_diagnosis） and the second covariate（cancer_history_first_degree_relative）, and there is no obvious grouping. It shows that there is no difference between the two variables.
 ![image](https://user-images.githubusercontent.com/89620829/144679531-7894d09f-aa03-4be8-914f-c17b73c00bc1.png)
 
-# Analysis：
+# Step 2：Analysis
  
 
