@@ -7,6 +7,7 @@
 
 ## Section 2: Next Steps.
 * Because I spend a lot of time processing data, I will talk about differential expression comparison and making volcano map. Next, the content of milestone 2, several variables and more detailed tumor gene expression analysis.
+![image](https://user-images.githubusercontent.com/89620829/144680518-0ce05eb6-9a05-4e7b-a249-cdc90764ccd7.png)
 
 
 ## Section 3: Data.  Not due by Milestone 1, but I'll address.
