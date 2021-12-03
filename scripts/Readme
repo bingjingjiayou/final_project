@@ -1,1 +1,3 @@
-# Step 1:
+# Step 1:The processing data is in a format that can be analyzed by deseq2.
+
+## 1，I downloaded the data of phase II liver cancer patients from ICGC website. And upload to R, see documents Anno and Bnno.
