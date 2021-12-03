@@ -12,6 +12,7 @@
 ## Next, I will analyze the covariates, perform data transformations and visualization, and obtain the heat map of their count matrix. Because I have many invalid scripts for modification and deletion in the process of processing data, I will sort out the scripts and submit them.
 ![image](https://user-images.githubusercontent.com/89620829/144680138-bab35a6b-d416-43a3-b09a-e22f5701a75a.png)
 ![image](https://user-images.githubusercontent.com/89620829/144680182-5b4211f3-6744-472b-bd9c-7660abfae150.png)
+![image](https://user-images.githubusercontent.com/89620829/144680230-c3a06407-33be-4afb-acb0-8cd98c925c62.png)
 
 # Section 3: Data.  Not due by Milestone 1, but I'll address.
 
