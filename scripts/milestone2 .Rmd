@@ -1,0 +1,551 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("DESeq2")
+```
+```{r}
+browseVignettes("DESeq2")
+```
+
+```{r}
+pasAnno <- read.table(file = '/Users/bingjing/Desktop/LIRI/exp_seq.tsv', sep = '\t', header = TRUE) 
+```
+
+
+```{r}
+pasBnno<-read.csv("/Users/bingjing/Desktop/LIRI/donor.csv")
+```
+
+```{r}
+library(readxl)
+pasAnno1<-subset(pasAnno,select = c(1,8,10))
+pasBnno1<-subset(pasBnno,select = c(1,5,9,21))
+``
+``
+```
+
+Change raw_ read_ The data type of the count column is int
+```{r}
+
+write.csv(pasAnno1,file="/Users/bingjing/Desktop/drawdata.csv",quote = F)
+```
+```{r}
+data <- read.table("/Users/bingjing/Desktop/drawdata.csv",header = TRUE, na.strings = c("NA"), sep = ',')
+class(data$raw_read_count)
+data$raw_read_count <- as.integer(data$raw_read_count)
+class(data$raw_read_count)
+write.csv(data, file = "/Users/bingjing/Desktop/rawdata.csv", row.names = F, quote = F, na="0")
+```
+
+
+```{r}
+pasAnno2<-read.csv("/Users/bingjing/Desktop/rawdata.csv",row.names = 1)
+```
+```{r}
+head(pasAnno2)
+```
+
+```{r}
+
+```
+
+Change data format (length data to width data)
+```{r}
+require(tidyverse)
+dat <-  pasAnno2  
+pasAnno5<-  pivot_wider(pasAnno2,names_from = icgc_donor_id, 
+              values_from = raw_read_count) 
+
+```
+```{r}
+head(pasAnno5)
+```
+
+
+```{r}
+save(pasAnno5,file="/Users/bingjing/Desktop/drawdata2.rdata")
+```
+```{r}
+library(dplyr)
+
+load("drawdata2.rdata")
+
+
+
+
+
+names_name <- colnames(pasAnno5)
+num_row <- nrow(pasAnno5)
+for(i in names_name){
+  for(row_i in 1:num_row){
+  if (class(pasAnno5[row_i, i]) == 'list'){
+    pasAnno5[row_i, i] = pasAnno5[row_i, i][[1]][1]
+    }
+  }
+}
+
+
+names_name <- colnames(pasAnno5)
+pasAnno7 <- pasAnno5
+kkk <- 1
+for (col_name in names_name){
+  print('开始新的一列')
+  print(kkk)
+  kkk <- kkk + 1
+  print(col_name)
+  new_list = c()
+  num_row <- nrow(pasAnno5)
+  # num_row <- 10
+  for(row_i in 1:num_row){
+    # print(row_i)
+    # print(pasAnno5[row_i, col_name][[1]][1])
+    if(pasAnno5[row_i, col_name] == 'NULL'){
+      new_list <- append(new_list, 0)  
+    }else{
+      new_list <- append(new_list, pasAnno5[row_i, col_name][[1]][1])
+    }
+  }
+  # print(new_list)
+  pasAnno7[1:num_row, col_name] <- new_list
+}
+  
+
+new_list = c()
+new_list <- append(new_list, 0) 
+pasAnno5[2, 'DO50855']
+
+
+
+pasAnno5$DO50855[19295][[1]] == NULL
+class(pasAnno5[5, 'DO50855'][[1]][1])
+
+
+
+
+# 缺失值处理
+is.na(pasAnno5)
+n <- sum(is.na(pasAnno5))
+n
+
+sub <- which(is.na(pasAnno5$DO50855))
+new_po5 <- pasAnno5[sub, ]
+
+
+pasAnno5$DO50850
+
+dd <-  pasAnno5[1,2]
+dd
+dd[[1]][1]
+class(dd)
+
+
+get_one=function(i){
+
+  print(i)
+
+  x=apply(df_in, 2, "[[",i)
+
+  y=unlist(lapply(x, "[[",1))
+
+  df_one=data.frame(
+
+    varname=names(y),
+
+    value=y,
+
+    stringsAsFactors = F)
+
+  df_one1=as.data.frame(t(df_one))
+
+  colnames(df_one1)=unlist(df_one1[1,])
+
+  df_one1=df_one1[2,]
+
+  df_one1
+
+}
+
+
+
+df_out=bind_rows(lapply(1:nrow(df_in), get_one))
+```
+```{r}
+head(pasAnno7)
+```
+
+```{r}
+require(tidyverse)
+pasAnno4<-read.csv("/Users/bingjing/Desktop/drawdata.csv",row.names = 1) 
+pasAnno5<-  pivot_wider(pasAnno4,names_from = icgc_donor_id, 
+              values_from = raw_read_count) 
+
+```
+```{r}
+colnames(pasAnno7) == pasBnno1$icgc_donor_id
+```
+```{r}
+data <- pasAnno7
+class(data$raw_read_count)
+data$raw_read_count <- as.integer(data$raw_read_count)
+class(data$raw_read_count)
+write.csv(data, file = "/Users/bingjing/Desktop/data.csv", row.names = F, quote = F, na="0")
+```
+
+```{r}
+#pasAnno8<-subset(pasAnno7,select = c(1))
+```
+
+```{r}
+pasAnno9<-subset(pasAnno7,select = -c(1))
+```
+```{r}
+data <- pasAnno9
+class(data$pasAnno9)
+data$pasAnno9 <- as.integer(data$pasAnno9$DO50855)
+class(data$pasAnno9)
+head(pasAnno9)
+#write.csv(data, file = "/Users/bingjing/Desktop/data1.csv", row.names = F, quote = F, na="0")
+```
+```{r}
+df<- data.frame(matrix(unlist(pasAnno9), nrow=length(pasAnno9), byrow = T),stringsAsFactors = FALSE)
+
+
+head(df)
+
+```
+```{r}
+length(df[,1])
+length(df[1,])
+n=length(df[,1])*length(df[1,])
+x=1:5315816
+dim(x)=c(22913,232)
+x[1,]=data[,1]
+
+head(x)
+```
+
+```{r}
+row.names(pasAnno7) <- pasAnno7$gene_id
+row.names(pasAnno7) <- pasAnno7[,-1]
+row.names(pasAnno7) <- t(pasAnno7)
+
+```
+```{r}
+head(pasAnno7)
+```
+```{r}
+df<- data.frame(matrix(unlist(pasAnno7), nrow=length(pasAnno7), byrow = T),stringsAsFactors = FALSE)
+head(df)
+```
+
+```{r}
+df1 <- t(df)
+```
+```{r}
+pasBnno2<-subset(pasBnno1,select = c(1))
+```
+```{r}
+df<-pasBnno2$gene_id
+```
+```{r}
+row.names(df)<-pasAnno8$row.names
+
+```
+```{r}
+gow<-cbind(pasAnno8$row.names, df)
+```
+```{r}
+pasAnno8 <- t(pasAnno7)
+```
+
+```{r}
+pasAnno9<-subset(pasAnno8,select = c(1))
+```
+```{r}
+pasAnno10 <- t(pasAnno8)
+```
+```{r}
+head(pasAnno8)
+```
+
+```{r}
+
+ gene_id<- rownames(pasAnno8)
+pasAnno08 <-  data.frame(gene_id,pasAnno8) 
+```
+取第一列gene_id
+```{r}
+pasAnno081<-subset(pasAnno08,select = c(1))
+```
+把第一列加进去
+```{r}
+gow<-cbind(pasAnno081$gene_id, df)
+```
+行列置换
+```{r}
+gow1<- t(gow)
+```
+```{r}
+write.csv(gow1, file = "/Users/bingjing/Desktop/gow1.csv", row.names = F, quote = F, na="0")
+```
+```{r}
+mydata<-read.csv("/Users/bingjing/Desktop/gow1.csv",row.names = 1)
+```
+```{r}
+```
+
+
+```{r}
+mydata1<- t(mydata)
+```
+```{r}
+head(mydata1)
+```
+
+```{r}
+write.csv(mydata1, file = "/Users/bingjing/Desktop/mydata1.csv", row.names = F, quote = F, na="0")
+```
+
+```{r}
+mydata2<-inner_join(pasBnno2,mydata1,by=gene_id)
+```
+```{r}
+pasBnno3<-pasBnno2rename(clumns=gene_id)
+```
+
+```{r}
+colnames(pasBnno2) <- "gene_id"
+```
+```{r}
+head(pasBnno2)
+```
+
+```{r}
+library(dplyr)
+mydata2<-read.csv("/Users/bingjing/Desktop//mydata1.csv",header = T)
+#mydata3<-inner_join(pasBnno2,mydata2,by=gene_id)
+```
+```{r}
+head(mydata2)
+```
+```{r}
+mydata3<-inner_join(pasBnno2,mydata2)
+```
+```{r}
+
+```
+```{r}
+
+```
+行列转换
+```{r}
+mydata4 <- t(mydata3)
+```
+存储到桌面
+```{r}
+write.csv(mydata4, file = "/Users/bingjing/Desktop/mydata4.csv",header=T, quote = F, na="0")
+```
+```{r}
+mydata5<-read.csv("/Users/bingjing/Desktop//mydata4.csv" row.names = )
+```
+把第一列改成行名
+
+```{r}
+row.names(mydata3) <- mydata3[, 1]
+mydata6<- mydata3[, -1]
+```
+
+行列转换
+```{r}
+mydata7 <- t(mydata6)
+```
+存到桌面
+```{r}
+write.csv(mydata7, file = "/Users/bingjing/Desktop/mydata7.csv", quote = F, na="0")
+```
+读取文件
+```{r}
+mydata8<-read.csv("/Users/bingjing/Desktop/mydata7.csv" , row.names = 1 )
+```
+比较donor_id是否一致
+```{r}
+colnames(mydata8) == pasBnno1$icgc_donor_id
+```
+```{r}
+
+
+```
+
+使用EDseq进行数据分析
+```{r}
+library("DESeq2")
+dds<-DESeqDataSetFromMatrix(countData = mydata8,
+                            colData = pasBnno1,
+                               design = ~donor_sex + cancer_history_first_degree_relative + donor_age_at_diagnosis)
+
+
+```
+预过滤：仅保留至少有 10 次读取的行
+```{r}
+keep <- rowSums(counts(dds)) >= 10
+dds <- dds[keep,]
+
+```
+
+注意因子水平
+```{r}
+dds$donor_age_at_diagnosis <- factor(dds$donor_age_at_diagnosis, levels = c("high incidence ","other group"))
+
+```
+
+```{r}
+dds<-DESeq(dds)
+res<-results(dds)
+```
+```{r}
+
+```
+```{r}
+resultsNames(dds)
+```
+
+```{r}
+resLFC <- lfcShrink(dds, coef="donor_age_at_diagnosis_other.group_vs_high.incidence.", type="apeglm")
+resLFC
+```
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("apeglm")
+```
+
+```{r}
+browseVignettes("apeglm")
+```
+```{r}
+#library("BiocParallel")
+#register(MulticoreParam(4))
+```
+```{r}
+resOrdered <- res[order(res$pvalue),]
+```
+
+```{r}
+summary(res)
+```
+```{r}
+sum(res$padj < 0.1, na.rm=TRUE)
+```
+
+```{r}
+res05 <- results(dds, alpha=0.05)
+summary(res05)
+```
+```{r}
+sum(res05$padj < 0.05, na.rm=TRUE)
+```
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("IHW")
+```
+
+```{r}
+library("IHW")
+resIHW <- results(dds, filterFun=ihw)
+summary(resIHW)
+sum(resIHW$padj < 0.1, na.rm=TRUE)
+metadata(resIHW)$ihwResult
+```
+```{r}
+plotMA(res, ylim=c(-2,2))
+```
+
+```{r}
+plotMA(resLFC, ylim=c(-2,2))
+```
+
+```{r}
+#idx <- identify(res$baseMean, res$log2FoldChange)
+#rownames(res)[idx]
+```
+
+```{r}
+resultsNames(dds)
+```
+```{r}
+
+```
+```{r}
+
+```
+
+```{r}
+resNorm <- lfcShrink(dds, coef=2, type="normal")
+resAsh <- lfcShrink(dds, coef=2, type="ashr")
+```
+
+
+install "ashr"
+```{r}
+install.packages("devtools")
+library(devtools)
+install_github("stephens999/ashr")
+```
+
+```{r}
+library(ashr)
+
+```
+
+```{r}
+par(mfrow=c(1,3), mar=c(4,4,2,1))
+xlim <- c(1,1e5); ylim <- c(-3,3)
+plotMA(resLFC, xlim=xlim, ylim=ylim, main="apeglm")
+plotMA(resNorm, xlim=xlim, ylim=ylim, main="normal")
+plotMA(resAsh, xlim=xlim, ylim=ylim, main="ashr")
+```
+```{r}
+
+```
+
+Plot counts
+```{r}
+plotCounts(dds, gene=which.min(res$padj), intgroup="donor_age_at_diagnosis")
+```
+```{r}
+d <- plotCounts(dds, gene=which.min(res$padj), intgroup="donor_age_at_diagnosis", 
+                returnData=TRUE)
+library("ggplot2")
+ggplot(d, aes(x=donor_age_at_diagnosis, y=count)) + 
+  geom_point(position=position_jitter(w=0.1,h=0)) + 
+  scale_y_log10(breaks=c(25,100,400))
+```
+```{r}
+library("pheatmap")
+select <- order(rowMeans(counts(dds,normalized=TRUE)),
+                decreasing=TRUE)[1:20]
+df <- as.data.frame(colData(dds)[,c("donor_age_at_diagnosis","type")])
+pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,
+         cluster_cols=FALSE, annotation_col=df)
+```
+
+```{r}
+rm(list = ls())   # 清除workplace中所有变量
+gc()              # 清除内存垃圾Garbage Collection
+```
+
