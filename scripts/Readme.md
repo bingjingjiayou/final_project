@@ -46,6 +46,7 @@
 ![image](https://user-images.githubusercontent.com/89620829/144679422-0015e20d-6489-4648-8c95-ee9e5a695cbd.png)
 
 ## 9，The principal component diagram of the sample is generated, and the PCA diagram related to the distance matrix is obtained, which visualizes the gender and family history of the two covariates of the experiment.The following figure shows the PCA diagram customized by using the ggplot function.Firstly, comparing the difference between the first main variable（donor_age_at_diagnosis） and the first covariate（donor_sex）, we can see that there is no obvious grouping. It shows that there is no difference between the two variables.
+![image](https://user-images.githubusercontent.com/89620829/144679482-58be7eff-302a-4202-8baf-05aae3084785.png)
 
 ## Then compare the difference between the second main variable（donor_age_at_diagnosis） and the second covariate（cancer_history_first_degree_relative）, and there is no obvious grouping. It shows that there is no difference between the two variables.
 
