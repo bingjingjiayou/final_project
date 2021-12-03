@@ -27,5 +27,7 @@
 ![image](https://user-images.githubusercontent.com/89620829/144574527-d32ec357-26a8-4e0f-b7a6-15e41a7196b8.png)
 
  ## 3、 Looking at the three normal distribution maps, we can see that the original adaptive distribution map is the best. See normal distribution diagram.
+ ![image](https://user-images.githubusercontent.com/89620829/144577165-49ec853f-3b1a-496f-9e4c-e12a84abfb4f.png)
+
  
 
