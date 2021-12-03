@@ -35,6 +35,7 @@
 ## 5，Multifactor design: use the design formula containing additional variables to analyze the experiments with multiple factor influence counts, and analyze the log2 multiple change, P value and adjusted p value of variables other than the main variable.
 
 ## 6，Transform and visualize multivariable data. Firstly, the influence of transformation on square difference is analyzed, and three transformations are used, NTD, VSD and rld. The results show that the variance of rld transform is the smallest.
+![image](https://user-images.githubusercontent.com/89620829/144665326-18a2e366-eb0f-47a1-831d-73e95e1f3d8c.png)
 
  
 
