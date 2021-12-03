@@ -1,5 +1,6 @@
 ## Section 1:Update
 * After downloading the data, I selected the data I needed.And is converting it into a format that can be analyzed in DEseq2.The scripts I use are in the scripts folder.
+![image](https://user-images.githubusercontent.com/89620829/144680410-457efff8-9626-4a85-9db2-6564651d2ec3.png)
 
 
 
