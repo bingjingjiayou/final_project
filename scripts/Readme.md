@@ -6,6 +6,7 @@
 ![image](https://user-images.githubusercontent.com/89620829/144572993-97fc9a23-97b6-47de-83d6-05f3d597aa3b.png)
 
 ## 2、 Some of these data are selected, that is, whether the diagnosis age as the main variable is a high incidence period, covariate gender and family history. See documents Anno1 and Bnno1.
+![image](https://user-images.githubusercontent.com/89620829/144573423-41748317-a0aa-495b-9c45-1fdc27a59e86.png)
 
 
 ## 3、 Because some patients in my data have been tested for many times and some have only been tested once, the data are processed and the first detection value is taken for analysis.
