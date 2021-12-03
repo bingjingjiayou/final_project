@@ -61,3 +61,5 @@
 
 ## 2，It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
 
+## 3，My original data and data generated from analysis are put into Google drive, link:
+
