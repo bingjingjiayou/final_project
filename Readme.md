@@ -63,7 +63,7 @@
 
 ## 2，Conclusions：It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
 
-## 3,Known Issues:
+## 3,Known Issues:The main problems I have in this project are: 1. The processing of the original data is a little complicated, because the original data contains some data you don't need to remove. 2. After selecting the data, adjust it to a format suitable for deseq analysis. The type is also complex, and various format transformations are required. 3. The problems encountered in the process of analyzing the data are mainly caused by the characteristics of the data itself. For example, after comparison, it is found that my two covariates are not different from the main variable. 4. Many differentially expressed genes can not directly reflect the association with the disease, indicating that further research and analysis are needed.
 
-## 4，My original data and data generated from analysis are put into Google drive, link:https://drive.google.com/drive/folders/0AMDuZxAiEanHUk9PVA
+## 4，My original data and data generated from analysis are put into Google drive, link:
 
