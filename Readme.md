@@ -51,15 +51,17 @@
 ## Then compare the difference between the second main variable（donor_age_at_diagnosis） and the second covariate（cancer_history_first_degree_relative）, and there is no obvious grouping. It shows that there is no difference between the two variables.
 ![image](https://user-images.githubusercontent.com/89620829/144679531-7894d09f-aa03-4be8-914f-c17b73c00bc1.png)
 
-# Step 2：Analysis
- ## 1， According to the analysis results, I got 171 differentially expressed genes in P<0.01, and the most significant genes were found to be related to up regulation or down expression of cancer genes, such as breast cancer and neurocytoma. These genes are not only differentially expressed in the 2 stage of liver cancer, but may also mediate the expression of other cancer genes. There are also some genes that mediate cell fusion and conduction. The following information can be obtained by querying the database:
-## SYNPR: a transport vesicle that mediates the transport from the intracellular compartment to the plasma membrane and fuses with the plasma membrane to release various cargo molecules, such as proteins or hormones, through exocytosis. It also mediates the expression of synaptic proteins, that is, the connection between the axon of one neuron and the dendrites, muscle fibers or glial cells of another neuron. It may also be the target gene of some miRNAs. Therefore, the analysis of this gene may belong to a general variation, which will be differentially expressed in many tumors.
-## PCDH8: it is the down-regulated gene of neuroblastoma and the target gene of some proteins in embryonic stem cells. It also belongs to ESR1 positive MCF-7 cells (breast cancer).
+# Step 2：Evaluation genes
+ ## 1， According to the analysis results, I got 171 differentially expressed genes in P<0.01, and the most significant genes were found to be related to up regulation or down expression of cancer genes, such as breast cancer and neurocytoma. These genes are not only differentially expressed in the 2 stage of liver cancer, but may also mediate the expression of other cancer genes. There are also some genes that mediate cell fusion and conduction. According to the query results, two of the six genes with the largest expression difference are related to the expression of other genes. They are up regulated in HEK293 cells (kidney fibroblasts) up known of TP53 [gene id = 7157] gene by RNAi.
+ 
+ 
+## According to the query results, two of the six genes with the largest expression difference are related to the expression of other genes. They are up regulated in HEK293 cells (kidney fibroblasts) up known of TP53 [gene id = 7157] gene by RNAi.
+
 ## SPRR1B: down regulated gene expression in primary epithelial breast cancer cell cultures overexpressing E2F3 (ID = 1871] gene).It is also a gene that mediates the programmed death of epidermal cells. It also mediates the high expression of immune cytokines under some stimuli.
 ## RGR: it can down regulate the expression of MGMT [GeneID=4255] gene in glioma and increase the CCND1 in breast cancer [gene ID = 595].   Genes. Other studies have shown that this gene is related to biological light sensitivity.
-## CALML5: belongs to the down regulated gene [GeneID=4582] in cancer progenitor cells corresponding to MUC1 positive side population (SP) MCF7 cells (breast cancer). And can lead to changes in cell morphology or behavior due to exposure to activators such as cells or soluble ligands.
 
-## 2，It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
+
+## 2，Conclusions：It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
 
 ## 3，My original data and data generated from analysis are put into Google drive, link:https://drive.google.com/drive/folders/0AMDuZxAiEanHUk9PVA
 
