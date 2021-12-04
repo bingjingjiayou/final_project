@@ -1,5 +1,7 @@
 # Step 1:The processing data is in a format that can be analyzed by deseq2.
 
+## My original data and data generated from analysis are put into Google drive, Google drive document 510 Final project contains two folders, the original data LIRI folder and the analysis data folder exported after analysis. Google drivelink:
+
 ## 1，Download the data of phase II liver cancer patients from ICGC website. And upload to R, see documents Anno and Bnno.
 ![image](https://user-images.githubusercontent.com/89620829/144572867-0c16d01d-4b91-452d-b88d-32baceb815e0.png)
 
@@ -51,7 +53,7 @@
 ## Then compare the difference between the second main variable（donor_age_at_diagnosis） and the second covariate（cancer_history_first_degree_relative）, and there is no obvious grouping. It shows that there is no difference between the two variables.
 ![image](https://user-images.githubusercontent.com/89620829/144679531-7894d09f-aa03-4be8-914f-c17b73c00bc1.png)
 
-# Step 2：Evaluation genes
+# Step 3：Evaluation genes
  ## 1，  According to the query results, two of the six genes with the largest expression difference are related to the expression of other genes. They are up regulated in HEK293 cells (kidney fibroblasts) up known of TP53 [gene id = 7157] gene by RNAi.
 ![image](https://user-images.githubusercontent.com/89620829/144694418-0359b261-ac0a-4ddb-8eb7-69dd680f55dc.png)
 
@@ -61,9 +63,10 @@
 
 ## Therefore，according to the analysis results, I got 171 differentially expressed genes in P<0.01, and the most significant genes were found to be related to up regulation or down expression of cancer genes, such as breast cancer and neurocytoma. These genes are not only differentially expressed in the 2 stage of liver cancer, but may also mediate the expression of other cancer genes. There are also some genes that mediate cell fusion and conduction. 
 
-## 2，Conclusions：It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
+# Step 4：Known Issues
+## The main problems I have in this project are: 1. The processing of the original data is a little complicated, because the original data contains some data you don't need to remove. 2. After selecting the data, adjust it to a format suitable for deseq analysis. The type is also complex, and various format transformations are required. 3. The problems encountered in the process of analyzing the data are mainly caused by the characteristics of the data itself. For example, after comparison, it is found that my two covariates are not different from the main variable. 4. Many differentially expressed genes can not directly reflect the association with the disease, indicating that further research and analysis are needed.
 
-## 3,Known Issues:The main problems I have in this project are: 1. The processing of the original data is a little complicated, because the original data contains some data you don't need to remove. 2. After selecting the data, adjust it to a format suitable for deseq analysis. The type is also complex, and various format transformations are required. 3. The problems encountered in the process of analyzing the data are mainly caused by the characteristics of the data itself. For example, after comparison, it is found that my two covariates are not different from the main variable. 4. Many differentially expressed genes can not directly reflect the association with the disease, indicating that further research and analysis are needed.
+# Step 5：Conclusions：It can be seen from my PCA chart that there is no significant grouping difference between my main variable (donor_age_at_diagnosis) and covariate (donor_sex), and there is no significant difference between the main variable (donor_age_at_diagnosis) and covariate (cancer_history_first_degree_relative), It shows that the data of other groups are not affected by gender and family history, and their gene differential expression is basically similar.
 
-## 4，My original data and data generated from analysis are put into Google drive, link:
+
 
