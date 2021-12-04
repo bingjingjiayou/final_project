@@ -1,6 +1,6 @@
-# Step 1:The processing data is in a format that can be analyzed by deseq2.
+## Because some files are too large to be uploaded directly, my other clinical data folder contains only part of the original data.My original data and data generated from analysis are put into Google drive, Google drive document 510 Final project contains two folders, the original data LIRI folder and the analysis data folder exported after analysis. Google drivelink:
 
-## My original data and data generated from analysis are put into Google drive, Google drive document 510 Final project contains two folders, the original data LIRI folder and the analysis data folder exported after analysis. Google drivelink:
+# Step 1:The processing data is in a format that can be analyzed by deseq2.
 
 ## 1，Download the data of phase II liver cancer patients from ICGC website. And upload to R, see documents Anno and Bnno.
 ![image](https://user-images.githubusercontent.com/89620829/144572867-0c16d01d-4b91-452d-b88d-32baceb815e0.png)
