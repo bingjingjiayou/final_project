@@ -1,4 +1,4 @@
-## Because some files are too large to be uploaded directly, my clinical data folder contains only part of the original data. I uploaded a separate copy of the differentially expressed genes in this file. My original data and data generated from analysis are put into Google drive, Google drive document 510 Final project contains two folders, the original data LIRI folder and the analysis data folder exported after analysis. Google drive link:
+## Because some files are too large to be uploaded directly, my clinical data folder contains only part of the original data. I uploaded a separate copy of the differentially expressed genes in this file. My original data and data generated from analysis are put into Google drive, Google drive document 510 Final project contains two folders, the original data LIRI folder and the analysis data folder exported after analysis. Google drive link:https://drive.google.com/drive/folders/1MQhspwIbCDDrQtb8Tnzp_1LDLo2V3dUL
 
 # Step 1:The processing data is in a format that can be analyzed by deseq2.
 
